@@ -42,7 +42,14 @@ body .min-vh-100 {
 .container {
     margin: auto;
     width: 60%;
-    max-width: 1150px;
+    max-width: 1000px;
+    min-width: 630px;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .container {
+        width: 95vw;
+    }
 }
 
 header {
@@ -53,6 +60,8 @@ header {
     border-bottom: rgba(35, 35, 35, 0.5) 1px solid;
 }
 
+
+
 .m-bt-30 {
     margin-bottom: 30px;
 }
@@ -60,6 +69,8 @@ header {
 .m-bt-60 {
     margin-bottom: 60px;
 }
+
+
 
 .nav-bar-buttons {
     font-size: 17px;
