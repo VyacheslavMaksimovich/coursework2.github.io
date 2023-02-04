@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Урок 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Введение</title>
+</head>
+<body class="min-vh-100">
+    <div class="container bread bread-for-lesson">
+        <a href="index.html" class="previous_tab anti-href">главная</a>
+        <span class="devide">/</span>
+        <a href="html-basics.html" class="previous_tab anti-href">основы html</a>
+        <span class="devide">/</span>
+        <span class="current_tab">введение в html</span>
+    </div>
+    <div class="container relative">
+        <h1 class="h1-for-lessons">Что такое HTML</h1>
+        <p><i>HTML (HyperText Markup Language)</i> — язык для разметки гипертекста, он является набором правил, 
+            по которым браузер отличает заголовки от списков, таблицы от картинок и так далее.
+        </p>
+        <p>
+            Взгляните внимательно на страницу, на которой вы сейчас находитесь. Вся она вне зависимости
+             от внешнего вида описана с помощью HTML. Это хорошо показывает, что какой бы сложной ни была страница, 
+             вся суть остается неизменной на протяжении более 20 лет.
+        </p>
+        <p>
+            Слово «язык» в HTML стоит воспринимать как правила. Сам по себе HTML только размечает данные, 
+            но никак с ними не взаимодействует и визуально с ними ничего не делает. Всю работу по выводу 
+            текстовых данных и разметки берет на себя браузер.
+        </p>
+        <p>
+            Вы можете попробовать открыть разметку этой страницы с помощью комбинации <kbd>Ctrl + U</kbd><br>
+            Не пугайтесь всего того, что здесь есть. Со временем для вас это перестанет быть «магией», 
+            и вы с легкостью будете ориентироваться в HTML-разметке.
+        </p>
+
+        <h1 class="h1-for-lessons">Теги в HTML</h1>
+        <p>
+            Один из таких тегов, о котором важно узнать, — параграф. Параграф, как и в реальной жизни, позволяет 
+            отделить по смыслу участки текста. Визуально это обычно делается с помощью отступов. На этой странице 
+            много параграфов, и вы можете их легко отличить друг от друга по отступам между ними.
+        </p>
+        <p>
+            Чтобы вставить параграф на страницу, необходимо указать специальную конструкцию 
+            <span style="color: #d63384">&lt;p&gt;</span> и <span style="color: #d63384">&lt;/p&gt;</span> между которыми вставить абзац текста.
+        </p>   
+        <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="eYjxMBb" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/eYjxMBb">
+            Untitled</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Как вы заметили, у нас может быть не один параграф. Почти все HTML-теги возможно использовать много раз на странице.
+        <p>
+            У тега параграфа есть открывающая часть <span style="color: #d63384">&lt;p&gt;</span> и 
+            закрывающая <span style="color: #d63384">&lt;/p&gt;</span>. Именно благодаря этому браузер понимает, где начинается 
+            параграф и где заканчивается. Такие теги называются парными.
+        </p>
+        <p>
+            Как можно догадаться, если есть парные теги, то есть и непарные теги. И вы не ошиблись! 
+            В процессе работы с версткой вы узнаете и о таких тегах, и об их применении. Не торопитесь :)
+        </p>
+        <p>
+            Другой ключевой концепцией, помимо тегов, является вложенность. Посмотрите еще раз на пример разметки:
+        </p>
+        <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="zYLeWdV" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/zYLeWdV">
+            Untitled</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            В этом примере есть парный тег <span style="color: #d63384">&lt;section&gt;</span>, и внутри него располагаются остальные теги и текст внутри них. 
+            Эта концепция является одной из основных, которая позволяет строить большие системы.
+        </p>
+
+        <h1 class="h1-for-lessons">Атрибуты</h1>
+        <p>Еще одна важная концепция HTML — атрибуты и их значение. Атрибуты — это просто дополнительная информация для браузера.</p>
+        <p> 
+            В HTML вы можете использовать ссылки, чтобы перемещаться по интернету. Недостаточно просто указать 
+            тег ссылки <span style="color: #d63384">&lt;a&gt;</span> и текст внутри.
+        </p>
+        <p>
+            Браузер, к сожалению, не умеет читать наши мысли и перенаправлять пользователя туда, куда мы хотели,чтобы 
+            перенаправить пользователя, мы должны помочь браузеру и указать, куда пользователь переместится после клика на
+            ссылку. Для этого используется атрибут <span style="color: #d63384">href</span>, значением которого является нужная ссылка.
+        </p>
+        <p>
+            Теперь при клике на ссылку пользователя успешно перенаправит по тому адресу, который мы указали внутри атрибута <span style="color: #d63384">href</span>.
+        </p>
+        <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="wvxNmjm" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/wvxNmjm">
+            Untitled</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a></span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <div class="container-button">
+            <button class="next-button" onclick="window.location.href = '#';">Далee</button>
+        </div>
+    </div>
+</body>

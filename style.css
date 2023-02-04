@@ -1,11 +1,11 @@
 @font-face {
-    font-weight: 400;
+    font-weight: 300;
     font-family: Raleway;
     src: url(/fonts/Raleway-Light.ttf);
 }
 
 @font-face {
-    font-weight: 300;
+    font-weight: 400;
     font-family: Raleway;
     src: url(/fonts/Raleway-Regular.ttf);
 }
@@ -41,8 +41,7 @@ body .min-vh-100 {
 
 .container {
     margin: auto;
-    width: 60%;
-    max-width: 1000px;
+    max-width: 900px;
     min-width: 630px;
 }
 
@@ -52,6 +51,10 @@ header {
     justify-content: space-between;
     padding: 16px 0px;
     border-bottom: rgba(35, 35, 35, 0.5) 1px solid;
+}
+
+.m-bt-110 {
+    margin-bottom: 110px;
 }
 
 .m-bt-60 {
@@ -64,6 +67,10 @@ header {
 
 .m-bt-15 {
     margin-bottom: 15px;
+}
+
+.m-tp-17 {
+    margin-top: 15px;
 }
 
 .logo {
@@ -247,13 +254,11 @@ ul {
 }
 
 .next-button {
-    position: absolute;
     padding: 12px 30px;
     background-color: white;
     border: #353535 1px solid;
     border-radius: 10px 10px 0px 10px;
     font-size: 20px;
-    right: 0;
     transition: background-color 0.4s;
 }
 
@@ -261,3 +266,32 @@ ul {
     background-color: #353535;
     color: white;
 }
+
+.container-button {
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+    margin: 30px 0px;
+    position: relative;
+}
+
+.h1-for-lessons {
+    margin-bottom: 20px;
+    margin-top: 48px;
+}
+
+p {
+    margin: 0px 0px 1em 0px;
+    color: black;
+    line-height: 1.7em;
+}
+
+kbd {
+    color: white;
+    padding: 5px 5px;
+    background-color: #353535;
+    font-size: 0.85em;
+    border-radius: 5px;
+}
+
+
