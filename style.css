@@ -22,6 +22,12 @@
     src: url(/fonts/Raleway-SemiBold.ttf);
 }
 
+@font-face {
+    font-weight: 700;
+    font-family: Raleway;
+    src: url(/fonts/Raleway-Bold.ttf);
+}
+
 
 @font-face {
     font-weight: 500;
@@ -245,8 +251,10 @@ ul {
 }
 
 .list > li {
-    margin-bottom: 5px;
+    margin: 0;
     list-style-type: disc;
+    color: black;
+    line-height: 1.7em;
 }
 
 .relative {
@@ -294,4 +302,6 @@ kbd {
     border-radius: 5px;
 }
 
-
+img {
+    vertical-align: middle;
+}

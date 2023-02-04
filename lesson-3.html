@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Урок 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Введение</title>
+</head>
+<body class="min-vh-100">
+    <div class="container bread bread-for-lesson">
+        <a href="index.html" class="previous_tab anti-href">главная</a>
+        <span class="devide">/</span>
+        <a href="html-basics.html" class="previous_tab anti-href">основы html</a>
+        <span class="devide">/</span>
+        <span class="current_tab">блочная модель</span>
+    </div>
+    <div class="container">
+        <h1 class="h1-for-lessons">Введение в блочную модель</h1>
+        <p>
+            Представьте себе процесс строительства дома. Условно его можно разделить на несколько этапов: 
+            возведение структуры дома и его отделка. При возведении дома мы заливаем фундамент, возводим стены,
+             устанавливаем крышу. После этого уже переходим к покраске дома, устанавливаем окна и занимаемся декорированием.
+        </p>
+        <p>
+            Процесс создания верстки можно описать похожими процессами. В ней так же важна роль возведения структуры и отделки. 
+            Для этого существуют несколько основных типов элементов:
+        </p>
+        <ol class="list">
+            <li><b>Блочные элементы (Block level).</b> - отвечают за каркас страницы.</li>
+            <li><b>Строчные элементы (Inline level).</b> - помогают нам в процессе стилизации страницы или добавления функциональных частей.</li>
+        </ol>
+        <p>
+            <b>Важно:</b> сами по себе элементы HTML не являются блочными или строчными. HTML — всего лишь разметка. 
+            За то, будет элемент блочным или строчным, отвечает CSS. Для всех HTML-тегов существуют стандартные
+            модели вывода, которые по умолчанию настроены в браузере, поэтому понятие блочных и строчных 
+            элементов обычно соотносят с определенными тегами, так как они имеют стандартное поведение при 
+            добавлении на страницу.
+        </p>
+
+        <h1 class="h1-for-lessons">Блочные элементы</h1>
+        <p>
+            Основная особенность блочных элементов — они занимают всю доступную им ширину. Из-за этого 
+            другие элементы до и после блочных элементов не встают в один ряд с ними, а располагаются до 
+            или после них, но уже на другой строке.
+        </p>
+        <p>
+            Стоит отдельно отметить понятие «занимает всю доступную ширину». Что же именно скрывается за этой 
+            доступной шириной? Ширина всей страницы, ширина экрана или ширина дороги близ деревни Ракушки? На 
+            самом деле доступная ширина — вся доступная ширина родителя. То есть, если наш блок лежит внутри 
+            <span style="color: #d63384">&lt;body&gt;</span>, то эта ширина будет равна именно ширине 
+            <span style="color: #d63384">&lt;body&gt;</span>. Стоит изменить ширину 
+            <span style="color: #d63384">&lt;body&gt;</span>, так сразу изменится и ширина блочного элемента внутри.
+        </p>
+        <p>
+            Внутрь блочных элементов мы можем вкладывать другие блочные элементы, причем до бесконечночти 
+            Это позволяет нам делать сложную верстку, оперируя различными компонентами, которые будут созданы.
+        </p>
+        <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="wvxNmjm" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/wvxNmjm">
+            Untitled</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            <b>Важно:</b> хоть HTML и позволяет бесконечно вкладывать блоки друг в друга, лучше сохранять здравый смысл.
+            Дело в том, что процесс вывода верстки достаточно долгий для браузеров. На это тратится 
+            довольно много ресурсов. И чем больше вложенность блоков друг в друга, тем сложнее браузеру
+            и компьютеру все это обработать.
+        </p>
+        <p>Вложенность блочных элементов друг в друга <i>ограничена</i> только несколькими пунктами:</p>
+        <ol class="list">
+            <li>Нельзя вкладывать заголовки в заголовки</li>
+            <li>Нельзя вкладывать параграфы в параграфы</li>
+        </ol>
+        <p>
+            Для создания блочного элемента используется тег <span style="color: #d63384">&lt;div&gt;</span>. 
+            Он не имеет никаких дополнительных стилей,кроме блочного отображения. Этим тегом оборачивается связанная
+            информация, создаются каркасы компонентов. Но тег не является семантичным, то есть не несет смысловой нагрузки.
+            Подробнее о семантических элементах будет в следующем уроке.
+        </p>
+
+        <h1 class="h1-for-lessons">Строчные элементы</h1>
+        <p>
+            Строчные элементы являются отделочным материалом, с помощью которого мы можем выделить участки 
+            текста, или добавить немного логики, как в случае со ссылками. Строчные элементы противоположны 
+            блочным. Они не занимают всю доступную ширину и из-за этого не происходит переноса соседних элементов.
+        </p>
+        <p>Давайте добавим в прошлый пример строчный элемент :</p>
+        <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="oNMmypV" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/oNMmypV">
+            Untitled</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Что произошло? Мы обернули слово <i>здесь</i> в ссылку, которая уведет пользователя в то место, которое мы укажем. 
+            Что произойдет в браузере при добавлении этого тега? Ссылка станет синего цвета и появится подчеркивание. 
+            Но сам текст останется на месте, так как ширина ссылки будет равна ширине слова <i>здесь</i>.
+        </p>
+        <p>
+            Это главная отличительная черта строчных элементов. Помимо этого есть важная особенность, связанная 
+            с применением свойств <span style="color: #d63384">width</span> и <span style="color: #d63384">height</span> в CSS. 
+            Для строчных элементов эти свойства не работают. Их применение не даст никакого эффекта.
+        </p>
+        <p>
+            Так же, как и блочные элементы, мы можем вкладывать строчные элементы внутрь строчных. 
+            Это распространенная практика, которая вам пригодится. Например:
+        </p>
+        <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="zYLeaMJ" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/zYLeaMJ">
+            Untitled</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17"><b>Важно:</b> не вкладывайте внутрь строчных элементов блочные. Это нарушает семантику и усложняет чтение кода</p>
+
+        <h1 class="h1-for-lessons">Блочная модель документа</h1>
+        <p>
+            Еще до работы с CSS полезно понимать, как браузер выводит элементы на вашу страницу.
+            Помимо естественных свойств высоты и ширины, любой элемент на странице может иметь следующие свойства:
+        </p>
+        <ol class="list">
+            <li><span style="color: #d63384">padding</span> — Внутренние отступы элемента</li>
+            <li><span style="color: #d63384">margin</span> — Внешние отступы от элемента</li>
+            <li><span style="color: #d63384">border</span> — Видимые границы элемента</li>
+        </ol>
+        <p>
+            Каждое из них не просто выполняет ту функцию, которая указана, но и напрямую влияет 
+            на конечные значения высоты и ширины элемента.
+        </p>
+        <img src="img/box-model.jpg" style="height: 300px;" alt="box-model">
+        <p class="m-tp-17">
+            Представьте, что у нас есть квадрат со стороной 150 пикселей. Мы добавили к нему рамку в 2 пикселя, 
+            внутренний отступ в 10 пикселей с каждой стороны и по 20 пикселей внешнего отступа с каждой стороны.
+        </p>
+        <p>
+            Сколько места будет занимать наш квадрат на странице? Для этого намc просто надо суммировать все значения.
+        </p>
+        <p>
+            Ширина: 150px (начальная ширина) + 2px (граница справа) + 2px (граница слева) + 10px (внутренний отступ справа) 
+            + 10px (внутренний отступ слева) + 20px (Внешний отступ справа) + 20px (Внешний отступ слева) = 214px
+        </p>
+        <p>
+            Высота: 150px (начальная высота) + 2px (граница сверху) + 2px (граница снизу) + 10px (внутренний отступ сверху) 
+            + 10px (внутренний отступ снизу) + 20px (Внешний отступ сверху) + 20px (Внешний отступ снизу) = 214px
+        </p>
+
+        <h1 class="h1-for-lessons">Задание</h1>
+        <p>
+            Воспользуйтесь любым онлайн сервисом, который умеет преобразовывать HTML разметку. Например CODEPEN, 
+            для этого просто нажмите на надпись EDIT ON CODEPEN в блоке с кодом ниже:
+        </p>
+        <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="oNMmypV" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/oNMmypV">
+            Untitled</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Попробуйте изменять блочные и строчные теги, добавлять и удалять их. Посмотрите, как будет меняться поведение.
+            Уделите этому хотя-бы 20 минут.
+        </p>
+        <div class="container-button">
+            <button class="next-button" onclick="window.location.href = 'lesson-3.html';">Далee</button>
+        </div>
+    </div>
+</body>
