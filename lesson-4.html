@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Урок 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Введение</title>
+</head>
+<body class="min-vh-100">
+    <div class="container bread bread-for-lesson">
+        <a href="index.html" class="previous_tab anti-href">главная</a>
+        <span class="devide">/</span>
+        <a href="html-basics.html" class="previous_tab anti-href">основы html</a>
+        <span class="devide">/</span>
+        <span class="current_tab">семантический html</span>
+    </div>
+    <div class="container">
+        <h1 class="h1-for-lessons">Введение в семантический HTML</h1>
+        <p>При создании верстки нужно учитывать семантику, то есть смысловое (логическое) значение всех элементов.</p>
+        <p>
+            Основная цель любой HTML-верстки — передача смысла блоков. Часто помимо пользователей по нашим страницам 
+            ходят и роботы. Они собирают и анализируют информацию страницы. К примеру, поисковые роботы просматривают
+            всю страницу и определяют ее полезность, а также уникальность. И если для человека достаточно просто 
+            поделить страницу на части и найти шапку, основной контент, футер, то для робота это достаточно сложная
+            задача. Робот видит исключительно нашу верстку и не может «глазами» отделить части макета.
+        </p>
+        <p>
+            Вторая важная причина необходимости создания семантической верстки — использование страниц людьми с 
+            ограниченными возможностями. Слабовидящие пользователи используют «скринридеры» — устройства или приложения,
+            воспроизводящие голосом элементы страницы. Чтобы скринридер мог правильно понять, где содержится основная 
+            информация, меню, поясняющие блоки и так далее, мы должны правильно разметить страницу. Это поможет устройствам 
+            правильно разбить страницу на логические блоки и дать возможность посетителям корректно перемещаться по странице. 
+            Такая концепция называется «Доступный WEB».
+        </p>
+        <p>
+            Для решения этих вопросов в стандарте HTML5 появилось множество семантических тегов, которыми вы можете 
+            пользоваться. В этом уроке изучим базовые семантические теги и разметим целую HTML-страницу.
+        </p>
+
+        <h1 class="h1-for-lessons">Шапка сайта</h1>
+        <p>
+            Верхняя область макета зачастую называется «шапкой» сайта. Она содержит название компании, основное меню, 
+            контактную информацию. Эта область очень важна для быстрой навигации по сайту, так как обычно содержит меню 
+            с основными разделами сайта.
+        </p>
+        <img src="img/header.png" style="width: 100%; margin-top: 10px;" alt="header">
+        <p>
+            Чтобы создать шапку сайта, используется парный тег <span style="color: #d63384">&lt;header&gt;</span>,
+            внутри которого мы и располагаем необходимую информацию.
+        </p>
+        <p>Пример простенькой шапки сайта:</p>
+        <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="XWBOyzw" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/XWBOyzw">
+            html basics - lesson 4 - header exemple</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Возможно ты воскликнешь - "Эй, автор, это вовсем не похоже на привычную шапку сайта!" и будешь прав.
+            Правильно оформить шапку нам поможет CSS, но проходить мы его будем в следующем курсе. Сейчас же сосредоточься
+            на изучении разметки, не спеши.
+        </p>
+        <p>
+            По своему поведению тег <span style="color: #d63384">&lt;header&gt;</span> работает так же, как и простой 
+            <span style="color: #d63384">&lt;div&gt;</span>,. Почти все семантические элементы являются блочными и 
+            не имеют стилей по умолчанию. Это позволяет очень быстро добавить семантику в уже существующие проекты. 
+            Если стили в этих проектах не завязаны на тегах, то достаточно просто сменить название с 
+            <span style="color: #d63384">&lt;div&gt;</span> на <span style="color: #d63384">&lt;header&gt;</span>, и мы 
+            получим уже семантичную шапку сайта.
+        </p>
+
+        <h1 class="h1-for-lessons">Навигация</h1>
+        <p>Попробуйте взглянуть на шапку сайта. Что он там видит? Обычно это множество ссылок, логотип, текст и другая информация</p>
+        <p>
+            Если вы еще не сверстали пару своих макетов, то по такому набору можете и не понять, что набор ссылок 
+            не что иное, как основное меню сайта. Вот и роботам не всегда просто это сделать. Конечно, они уже 
+            достаточно обучены, чтобы в таком простом наборе найти меню, но меню обычно может быть не одно и быть
+            контекстно-зависимым. Тогда робот может принять за основное меню не то, что бы мы хотели.
+        </p>
+        <p>
+            Как же нам ему помочь? Для этого в стандарте HTML5 появился тег <span style="color: #d63384">&lt;span&gt;</span>. 
+            Он обозначает навигационную область. Причем помочь отделить основное меню от меню раздела можно с помощью других тегов, 
+            речь о которых пойдет ниже.
+        </p>
+        <img src="img/nav.png" style="width: 100%; margin-top: 10px;" alt="navigation image">
+        <p>
+            Заменим простой блочный элемент <span style="color: #d63384">&lt;div&gt;</span> на его семантичного брата 
+            <span style="color: #d63384">&lt;nav&gt;</span>:    
+        </p>
+        <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="wvxOGyM" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/wvxOGyM">
+            html basics - lesson 4 - nav exemple</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Главной особенностью использования
+            <span style="color: #d63384">&lt;nav&gt;</span> является то, что не обязательно оборачивать все 
+            меню на странице. Обычно достаточно обернуть только главное меню и, например, не оборачивать меню в футере. 
+            При этом не запрещается  иметь сразу несколько элементов <span style="color: #d63384">&lt;nav&gt;</span> 
+            на странице. Выделяйте ими главные меню на странице.
+        </p>
+
+        <h1 class="h1-for-lessons">Уникальный контент</h1>
+        <p>
+            Основной смысл каждой страницы — уникальный контент. Это самое главное, что должно быть на вашей странице.
+            Пользователь вполне справится без меню или футера, но если на странице нет своего уникального контента, 
+            то страница бесполезна.
+        </p>
+        <p>
+            Для разметки уникального контента в стандарте HTML5 появился специальный тег <span style="color: #d63384">&lt;main&gt;</span>. 
+            Именно он поможет обозначить область с самым важным контентом на странице. Старайтесь в нем держать 
+            только контент. Обычно меню, боковые панели и футер в эту область не входят. Исключением может быть 
+            только ситуация, если эти блоки действительно уникальны для данной страницы. Например, меню может вести
+             по разделам страницы. В таком случае оно на полных правах может быть включено в область уникального контента.
+        </p>
+        <img src="img/main.png" style="width: 100%;" alt="main">
+        <p class="m-tp-17">Добавим такую область в нашу верстку:</p>
+        <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="bGjZpmw" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/bGjZpmw">
+            html basics - lesson 4 - main exemple</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Наличие тега <span style="color: #d63384">&lt;main&gt;</span> также очень важно для мобильных браузеров.
+            Вы могли видеть, что многие из них имеют функцию «Режим чтения». При его включении браузер автоматически 
+            удалит все оформление и все ненужные блоки, оставив только главный контент. Этим контентом и будет являться
+            область, заключенная в тег <span style="color: #d63384">&lt;main&gt;</span>. Такой режим отлично подходит 
+            для людей, у которых в настоящий момент слабое подключение к интернету.
+        </p>
+        <p>
+            Так как внутри <span style="color: #d63384">&lt;main&gt;</span> содержится уникальный контент страницы, 
+            то разрешено использовать только один такой тег на странице.
+        </p>
+
+        <h1 class="h1-for-lessons">Секции</h1>
+        <p>
+            Контент на странице не является однородным. Обычно это цепочка логических областей, каждая из которых
+            описывает что-то конкретное. Например, на странице могут присутствовать область с описанием преимуществ, 
+            цены, формы и так далее. Их хочется как-то выделить. И на это есть несколько причин:
+        </p>
+        <ol class="list">
+            <li>
+                С правильно разделенным контентом удобно работать. Мы легко можем перемещать такие области,
+                менять местами или удалять. В коде их будет легко найти
+            </li>
+            <li>Правильная группировка разделов — важная часть при создании доступного web'а</li>
+        </ol>
+        <img src="img/section.png" style="width: 100%;" alt="section">
+        <p class="m-tp-17">
+            Для таких самостоятельных логических единиц существует специальный тег 
+            <span style="color: #d63384">&lt;section&gt;</span>, который внутри себя может содержать одну конкретную секцию. 
+            Добавим ее в наш пример:
+        </p>
+        <p class="codepen" data-height="430.3999938964844" data-default-tab="html,result" data-slug-hash="bGjZpmw" data-user="VyacheslavMaksimovich" style="height: 430.3999938964844px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/bGjZpmw">
+            html basics - lesson 4 - main exemple</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Заметьте, как легко стало искать преимущества в коде, ведь они находятся в отдельной секции. 
+            Также вы могли обратить внимание на заголовок внутри секции. Так как секция — это самостоятельная 
+            единица, то почти всегда она имеет свой заголовок. Хоть это и не всегда так, и стандарт не обязывает 
+            нас включать заголовок в секцию, но старайтесь придерживаться этого правила.
+        </p>
+        <p>
+            Как быстро определить, стоит ли включать участок контента в отдельную секцию? 
+            Все очень просто: если вы можете описать участок контента в одном или двух словах (преимущества, цены,
+            форма заказа, каталог, контакты и так далее), то с большой вероятностью этот участок является самостоятельной секцией.
+        </p>
+
+        <h1 class="h1-for-lessons">Независимые секции</h1>
+        <p>
+            Другим способом выделить логический участок текста является использование тега 
+            <span style="color: #d63384">&lt;main&gt;</span>. У вас может возникнуть вопрос: 
+            «Зачем иметь два различных тега для выделения одного и того же?»
+        </p>
+        <p>
+            Между <span style="color: #d63384">&lt;section&gt;</span> и <span style="color: #d63384">&lt;article&gt;</span>
+            есть одна существенная разница: <span style="color: #d63384">&lt;article&gt;</span> является независимой секцией,
+            то есть ее можно перенести на любую страницу сайта или даже на другой сайт, и при этом она не потеряет своего контекста.
+        </p>
+        <p>
+            Представьте себе блог и отдельную статью в нем. Можем ли мы понять статью, если она вдруг окажется не в блоге, 
+            а, например, на странице с услугами? Конечно! Ведь статья — это законченный текст. Следовательно, такую статью 
+            можно обернуть в тег <span style="color: #d63384">&lt;article&gt;</span>.
+        </p>
+        <img src="img/article.png" style="width: 100%;" alt="article.png">
+        <p class="m-tp-17">
+            Добавим колонку новостей в наш пример верстки. Сразу подумаем, как она может быть разделена.
+            Сами по себе новости являются достаточно уникальным элементом, ведь даже если их перенести 
+            на другую страницу, то они не потеряют свою актуальность. В этом случае каждую новость можно 
+            обернуть в <span style="color: #d63384">&lt;article&gt;</span>. А что делать с оберткой блока? 
+            Она объединяет по смыслу несколько различных новостей, ее можно спокойно назвать одним словом, и она точно 
+            будет иметь свой заголовок. Следовательно, ей подойдет тег <span style="color: #d63384">&lt;section&gt;</span>.
+        </p>
+        <p class="codepen" data-height="431.1999206542969" data-default-tab="html,result" data-slug-hash="RwBdRWW" data-user="VyacheslavMaksimovich" style="height: 431.1999206542969px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/RwBdRWW">
+            html basics - lesson 4 - article exemple</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        <h1 class="h1-for-lessons">Задание</h1>
+        <p>Создайте файл index.html на своем компьютере и создайте собственное резюме. Используйте изученные в этом уроке теги.</p>
+
+        <div class="container-button">
+            <button class="next-button" onclick="window.location.href = 'lesson-5.html';">Далee</button>
+        </div>
+    </div>
+</body>
