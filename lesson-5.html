@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Урок 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Введение</title>
+</head>
+<body class="min-vh-100">
+    <div class="container bread bread-for-lesson">
+        <a href="index.html" class="previous_tab anti-href">главная</a>
+        <span class="devide">/</span>
+        <a href="html-basics.html" class="previous_tab anti-href">основы html</a>
+        <span class="devide">/</span>
+        <span class="current_tab">семантический html</span>
+    </div>
+    <div class="container">
+        <h1 class="h1-for-lessons">Базовая струткрура HTML документа</h1>
+        <p>
+            Как театр начинается с вешалки, так и любой HTML-документ начинается с базовой структуры. 
+            Она включает в себя теги, которые есть в любом HTML-файле. Эти теги и служебная информация 
+            нужны браузеру для корректного отображения информации.
+        </p>
+        <p>Взглянем на базовую структуру любого HTML-документа:</p>
+        <p class="codepen" data-height="252.80001831054688" data-default-tab="html" data-slug-hash="bGjZeoY" data-user="VyacheslavMaksimovich" style="height: 252.80001831054688px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/bGjZeoY">
+            Untitled</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Этот набор кажется не очень большим, но браузеру он сообщает множество полезной информации. 
+            В этом уроке разберемся с каждой строчкой этой структуры
+        </p>
+
+        <h1 class="h1-for-lessons">DOCTYPE</h1>
+        <p>
+            Первая конструкция в любом HTML-документе — элемент <span style="color: #d63384">&lt;!DOCTYPE&gt;</span>. 
+            Он не относится к тегам и никаким образом не может отображаться на странице. Его задача — указать браузеру, 
+            какой стандарт HTML используется в этом документе. Сейчас это везде стандарт HTML5. Записывается он следующим образом:
+            <span style="color: #d63384">&lt;!DOCTYPE html&gt;</span>.
+        </p>
+        <p>
+            С приходом стандарта HTML5 элемент <span style="color: #d63384">&lt;!DOCTYPE&gt;</span> немного упростился. 
+            Если вы встретитесь с сайтами, созданными пять-десять лет назад, то сможете увидеть совершенно другие записи. 
+            Они были больше и напрямую влияли на то, как браузер обработает информацию. Неправильное указание элемента 
+            <span style="color: #d63384">&lt;!DOCTYPE&gt;</span> могло привести к некорректному отображению. Сейчас такой 
+            проблемы нет, поэтому вы можете без всяких опасений использовать конструкцию, которая указана в данном уроке.
+            Использование старых значений <!DOCTYPE> необходимо только при разработке с поддержкой очень старых браузеров.
+        </p>
+
+        <h1 class="h1-for-lessons">Парный тег html</h1>
+        <p>
+            Тег <span style="color: #d63384">&lt;html&gt;</span></html><span style="color: #d63384">&lt;/html&gt;</span> 
+            является основой основ. Именно внутри него располагается вся информация. Благодаря этому тегу браузер понимает,
+            где начинается контент, который необходимо обработать как HTML.
+        </p>
+        <p>
+            Важной частью тега html является наличие атрибута <span style="color: #d63384">lang</span>. 
+            В нем указывается язык, на котором отображается веб-страница. С помощью этого атрибута браузеры могут корректно
+            считать множество специфичных символов, которые присутствуют в разных языках. Помимо этого, атрибут 
+            <span style="color: #d63384">lang</span> начинает использоваться и в CSS, с которым вы познакомитесь в 
+            следующих уроках. В новых стандартах CSS появляются свойства, которые опираются на данный атрибут.
+            Например, позволяют корректно переводить слова в тексте.
+        </p>
+        <p>
+            В качестве значения атрибут <span style="color: #d63384">lang</span> принимает знакомые всем сокращения языков.
+            Для русского — <span style="color: #d63384">lang="ru"</span>, 
+            для английского — <span style="color: #d63384">lang="en"</span>, 
+            для немецкого — <span style="color: #d63384">lang="de"</span>.
+        </p>
+
+        <h1 class="h1-for-lessons">Парный тег head</h1>
+        <p>
+            Тег <span style="color: #d63384">&lt;head&gt;</span><span style="color: #d63384">&lt;/head&gt;</span>
+            служит для хранения служебной информации. Здесь возможны самые разные сочетания тегов, которые 
+            подсказывают браузеру название страницы, описание, ключевые слова и так далее. Такая информация 
+            называется метаинформацией. В современном вебе она отвечает не только за служебную информацию для 
+            браузера, но и активно используется при продвижении сайта. Поисковые системы считывают всю эту 
+            информацию и на основе множества алгоритмов определяют место сайта при разных поисковых запросах.
+        </p>
+        <p>
+            Любые данные, которые указаны внутри тега <span style="color: #d63384">&lt;head&gt;</span>, 
+            не видны при отображении страницы в браузере. Это значит, что нет необходимости располагать там информацию, 
+            которая предназначена для отображения.
+        </p>
+        <p>
+            Хоть различной информации внутри <span style="color: #d63384">&lt;head&gt;</span> может быть множество,
+            в этом уроке разберем несколько основных тегов, которые пригодятся при создании любой веб-страницы.
+        </p>
+
+        <h1 class="h1-for-lessons">Метаинформация</h1>
+        <p>
+            Метатег <span style="color: #d63384">&lt;meta&gt;</span>. Он принимает множество разных атрибутов, 
+            с которыми вы познакомитесь при создании своих сайтов. В настоящее время важным является метатег 
+            <span style="color: #d63384">&lt;meta&gt;</span> с атрибутом <span style="color: #d63384">charset</span>. 
+            Он позволяет установить кодировку документа.
+        </p>
+        <p>
+            Кодировка — таблица символов. В ней каждый символ имеет уникальный код, благодаря чему программы, в том числе 
+            и браузеры, могут одинаково отображать один и тот же текст. У разных пользователей может стоять различная 
+            кодировка по умолчанию. Это приводит к тому, что у некоторых пользователей текст может отображаться в виде 
+            «кракозябр», хотя у вас он будет отображаться правильно. Универсальной кодировкой, которая содержит большинство
+            необходимых символов из разных языков, является кодировка <span style="color: #d63384">UTF-8</span>. 
+            Именно ее рекомендуется устанавливать в качестве значения атрибута <span style="color: #d63384">charset</span>. 
+            Теперь браузер будет отображать все символы именно в этой кодировке.
+        </p>
+        <p>Записывается это так: <span style="color: #d63384">&lt;meta charset="UTF-8"&gt;</span></p>
+
+        <h1 class="h1-for-lessons">Заголовок страницы</h1>
+        <p>
+            На любом веб-сайте вы можете заметить заголовок, который отображается на вкладке вашего браузера.
+            Например, на странице курса «Основы современной верстки» вкладка в браузере Google Chrome выглядит следующим образом:
+        </p>
+        <img src="img/title.png" style="width: 100%;" alt="">
+        <p class="m-tp-17">
+            Для указания заголовка страницы используется специальный парный тег 
+            <span style="color: #d63384">&lt;title&gt;</span><span style="color: #d63384">&lt;/title&gt;</span>, 
+            внутри которого указывается нужная информация. 
+            Пример: <span style="color: #d63384">&lt;title&gt;</span>моя первая страница<span style="color: #d63384">&lt;/title&gt;</span>
+        </p>
+
+        <h1 class="h1-for-lessons">Тело документа</h1>
+        <p>
+            После тега  <span style="color: #d63384">&lt;head&gt;</span> в документе указывается парный тег 
+            <span style="color: #d63384">&lt;body&gt;</span><span style="color: #d63384">&lt;/body&gt;</span>, 
+            который является «телом» всей страницы. Именно здесь размещается вся информация, которая будет выведена на странице.
+        </p>
+        <img src="img/headbody.png" style="width: 100%;" alt="body area">
+        <p class="m-tp-17">Используем один из примеров прошлого урока</p>
+        <p class="codepen" data-height="330" data-default-tab="html" data-slug-hash="XWBOyzw" data-user="VyacheslavMaksimovich" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/XWBOyzw">
+            html basics - lesson 4 - header exemple</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            И добавим все недостающие теги чтобы полностью соответствовать всем стандартам HTML.
+            Выглядеть это будет следующим образом:
+        </p>
+        <p class="codepen" data-height="477.6000061035156" data-default-tab="html" data-slug-hash="dyjrXap" data-user="VyacheslavMaksimovich" style="height: 477.6000061035156px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/dyjrXap">
+            html basics - lesson 5</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Хоть данный набор и является основным, но на самом деле браузеры могут обработать 
+            HTML-информацию и без базовой структуры документа. Но не стоит отдавать все на откуп браузеру. 
+            Он постарается автоматически обернуть контент в <span style="color: #d63384">&lt;body&gt;</span>, добавит современный 
+            <span style="color: #d63384">&lt;!DOCTYPE&gt;</span>, но при этом нет уверенности в том, что все это он добавит корректно.
+        </p>
+
+        <h1 class="h1-for-lessons">Задание</h1>
+        <p>
+            Создайте базовую структуру документа и попробуйте разные варианты текста внутри тега 
+            <span style="color: #d63384">&lt;title&gt;</span>. Можете попробовать добавить 
+            туда даже эмодзи и посмотреть, как браузер выведет такой заголовок
+        </p>
+
+        <div class="container-button">
+            <button class="next-button" onclick="window.location.href = 'lesson-6.html';">Далee</button>
+        </div>
+    </div>
