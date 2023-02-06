@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Урок 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Введение</title>
+</head>
+<body class="min-vh-100">
+    <div class="container bread bread-for-lesson">
+        <a href="index.html" class="previous_tab anti-href">главная</a>
+        <span class="devide">/</span>
+        <a href="html-basics.html" class="previous_tab anti-href">основы html</a>
+        <span class="devide">/</span>
+        <span class="current_tab">emmet</span>
+    </div>
+    <div class="container">
+        <h1 class="h1-for-lessons">Emmet</h1>
+        <p>
+            Если вы работаете с редактором Visual Studio Code, то плагин Emmet уже установлен в редакторе.
+            В прошлом уроке вы также могли увидеть его работу при создании базовой структуры HTML-документа.       
+            Если вы пользуетесь другим редактором, то можете установить Emmet с помощью любой доступной инструкции. 
+            Этот плагин настолько популярен, что при желании, наверное, можно найти инструкцию по его установке на кофемолку.
+        </p>
+        <p>
+            Что же такое <i>Emmet</i> и зачем он нужен? Попробуем разметить воображаемую карточку товара интернет-магазина. 
+            Что нам может понадобиться? Обрамляющий блок, название товара, его картинка, блок с ценой, кнопка «Заказать».
+            Вроде не так много. Добавим карточку и расположим ее внутри секции с классом <span style="color: #d63384">cards</span>. 
+            Попробуем это преобразовать в HTML. Мы получим примерно следующую структуру:
+        </p>
+        <p class="codepen" data-height="324.79998779296875" data-default-tab="html,result" data-slug-hash="WNKmJNg" data-user="VyacheslavMaksimovich" style="height: 324.79998779296875px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/WNKmJNg">
+            html basics - lesson 6 - example</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Не самая сложная разметка, при этом в ней достаточно много разных элементов. Попробуйте повторить 
+            эту разметку сами, и вы увидите, что это отнимает достаточно много времени, хотя мы заранее знали, 
+            какие элементы будут нужны, и представляли это в голове. В итоге получается, что вместо верстки других 
+            элементов мы просто вводили корректные символы и старались следить за тем, что все блочные элементы будут закрыты.
+        </p>
+        <p>
+            На самом деле этот пример был сверcтан всего одной строкой. Изначально она вас может напугать, но к концу урока
+            вы поймете каждый символ, который в ней есть. Строка выглядит следующим образом:
+        </p>
+        <p class="codepen" data-height="184" data-default-tab="html,result" data-slug-hash="GRBedKv" data-user="VyacheslavMaksimovich" style="height: 184px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/GRBedKv">
+            html basics - lesson 6 - example</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Вот здесь и вступает в игру плагин <i>Emmet</i>. Он берет эту строку и преобразует ее в HTML, который вы видели выше. 
+            Чтобы плагин преобразовал строку в HTML, можно пойти одним из двух путей:
+        </p>
+        <ol class="list">
+            <li>
+                В самом конце набора строки Visual Studio Code сам вам предложит ее преобразовать. 
+                Вам нужно только нажать Enter, когда на экране есть всплывающая подсказка.
+            </li>
+            <li>
+                Выделить всю строку и нажать комбинацию клавиш <kbd>Ctrl + Shift + P</kbd>. В всплывающем окне начать
+                набирать <i>>Emmet: Expand Abbreviation</i> и выбрать этот пункт.
+            </li>
+        </ol>
+        <p>
+            189 символов против 335. Серьезный результат. И это различие будет только расти по мере того, 
+            насколько большую верстку вы хотите сделать. Вполне нормально, если полтысячи символов, с помощью 
+            <i>Emmet</i>, создадут вам структуру целой страницы. <i>Emmet</i> — мощный инструмент, который позволяет ускорить
+            разметку HTML-кода. Плагин позволяет снять бóльшую часть рутинных действий, от которых хочется спать.
+            Пройдемся с самого начала строки и разберем все, что здесь происходит:
+        </p>
+        <ol class="list">
+            <li>
+                <span style="color: #d63384">section.cards</span> — очень похоже на CSS-селектор, и именно 
+                так и стоит на него смотреть. Мы хотим создать элемент <span style="color: #d63384">&lt;section&gt;</span> 
+                с классом <span style="color: #d63384">cards</span>.
+            </li>
+            <li>
+                <span style="color: #d63384">></span> — символ, как и в CSS, указывает на вложенность. 
+                В текущем значении запись <span style="color: #d63384">section.cards&gt;</span> означает, что все, 
+                что указано далее, будет располагаться внутри секции с классом <span style="color: #d63384">cards</span>.
+            </li>
+            <li>
+                <span style="color: #d63384">article.card</span> — создаем элемент <span style="color: #d63384">&lt;article&gt;</span> 
+                с классом <span style="color: #d63384">card</span>.
+            </li>
+            <li>
+                <span style="color: #d63384">div.card-title</span> — создаем блочный элемент с классом 
+                <span style="color: #d63384">card-title</span>. Здесь есть хитрость: чтобы создать элемент 
+                <span style="color: #d63384">&lt;div&gt;</span>, не обязательно его указывать напрямую. 
+                Если не указан тег перед классом, то Emmet по умолчанию создаст элемент <span style="color: #d63384">&lt;div&gt;</span>. 
+                То есть вместо <span style="color: #d63384">div.card-title</span> можно было указать <span style="color: #d63384">.card-title</span>.
+            </li>
+            <li>
+                <span style="color: #d63384">{Название товара}</span> — в фигурных скобках указывается простой текст, 
+                который будет помещен внутрь блока.
+            </li>
+            <li>
+                <span style="color: #d63384">+</span> — символ сложения означает, что правую часть необходимо расположить
+                 рядом с левой, а не внутри нее, как в случае с символом <span style="color: #d63384">></span>. Мы хотим
+                расположить картинку рядом с блоком <span style="color: #d63384">card-title</span>, а не внутри.
+            </li>
+            <li>
+                <span style="color: #d63384">img[src="/images/card-item-1.png"][alt="Товар-1"]</span> — создаем элемент
+                <span style="color: #d63384">&lt;img&gt;</span>. В квадратных скобках указываются атрибуты, которые мы хотим
+                добавить. В данном случае это атрибут <span style="color: #d63384">src</span>, значением которого является
+                путь до изображения, а второй атрибут <span style="color: #d63384">alt</span> отвечает за мета-информацию
+                о нашей картинке. Атрибуты можно записывать как по отдельности, так и вместе. Если мы укажем вот такую запись
+                <span style="color: #d63384">img[src="/images/card-item-1.png" alt="Товар-1"]</span>, то результат останется тем же.
+            </li>
+            <li>
+                <span style="color: #d63384">()</span> — скобки позволяют группировать информацию. В данном 
+                случае мы хотим, чтобы все, что внутри скобок, располагалось рядом с картинкой, созданной в прошлом пункте.
+            </li>
+        </ol>
+        <p>
+            Все, что происходит дальше, вы уже знаете благодаря предыдущим пунктам. Как видите, 
+            <i>Emmet</i> достаточно интересный инструмент. И не настолько сложный, как может показаться с 
+            самого начала. Вот еще несколько примеров разных строк и результатов преобразования с помощью <i>Emmet</i>:
+        </p>
+        <p class="codepen" data-height="317.6000061035156" data-default-tab="html" data-slug-hash="rNrRvWN" data-user="VyacheslavMaksimovich" style="height: 317.6000061035156px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/rNrRvWN">
+            html basics - lesson 6 - emmet ready</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Обратите внимание на конструкцию <span style="color: #d63384">*3</span> — это в прямом смысле умножение.
+            Мы хотим взять элемент и разметить его три раза.
+        </p>
+        <p class="codepen" data-height="205.60000610351562" data-default-tab="html" data-slug-hash="mdjoLqx" data-user="VyacheslavMaksimovich" style="height: 205.60000610351562px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/mdjoLqx">
+            html basics - lesson 6 - emmet multiply</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Символ <span style="color: #d63384">$</span> в Emmet является счетчиком. При разворачивании такой строчки все символы
+            <span style="color: #d63384">$</span> заменяются на числа от 1 с шагом единица. Есть несколько дополнительных конструкций,
+            которые позволяют расширить данный счетчик:
+        </p>
+        <ol class="list">
+            <li>
+                Если использовать несколько идущих подряд символов <span style="color: #d63384">$</span>, 
+                то столько разрядов в счетчике и будет. Например, <span style="color: #d63384">div.item-$$$*3</span> 
+                начнет счетчик не просто c нуля, а с трех нулей. Первым элементом в таком случае станет 
+                <span style="color: #d63384">&lt;div class="item-001"&gt;</span><span style="color: #d63384">&lt;/div&gt;</span>.
+            </li>
+            <li>
+                Счетчик можно начать с любого произвольного числа. Для этого используется символ <span style="color: #d63384">@</span>,
+                после которого идет начальное число. Например, <span style="color: #d63384">div.item-$@5*3</span> начнет счетчик с числа
+                пять. Первым элементом станет <span style="color: #d63384">&lt;div class="item-5"&gt;</span>
+                <span style="color: #d63384">&lt;/div&gt;</span>
+            </li>
+        </ol>
+        <p>Счетчик можно использовать внутри конструкции {}:</p>
+        <p class="codepen" data-height="198.39999389648438" data-default-tab="html" data-slug-hash="VwBRxXr" data-user="VyacheslavMaksimovich" style="height: 198.39999389648438px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/VwBRxXr">
+            html basics - lesson 6 - emmet $</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p class="m-tp-17">
+            Это базовые вещи, которые помогут вам сократить время написания разметки. <i>Emmet</i> куда более мощный инструмент, 
+            но этих возможностей вам хватит надолго. Помимо этого он умеет работать с CSS. Там он больше нужен для выписывания
+            сокращений. Вы можете попробовать создать любой CSS-файл и начать набирать свойства. Все, что предложит вам 
+            <i>Visual Studio Code</i>, работает и с <i>Emmet</i>.
+        </p>
+
+        <h1 class="h1-for-lessons">Задание</h1>
+        <p>
+            Попробуйте воспроизвести следующую верстку с помощью <i>Emmet</i>. Ваша задача из уже готовой верстки сделать
+            строку, как в случае с карточкой товара из этого урока.
+        </p>
+        <p class="codepen" data-height="423.9999694824219" data-default-tab="html,result" data-slug-hash="bGjZMMz" data-user="VyacheslavMaksimovich" style="height: 423.9999694824219px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/VyacheslavMaksimovich/pen/bGjZMMz">
+            html basics - lesson 6 - homework</a> by Vyacheslav (<a href="https://codepen.io/VyacheslavMaksimovich">@VyacheslavMaksimovich</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        <div class="container-button">
+            <button class="next-button" onclick="window.location.href = 'html-basics.html';">Завершить курс</button>
+        </div>
+    </div>
